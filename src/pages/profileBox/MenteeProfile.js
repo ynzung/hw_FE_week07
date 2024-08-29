@@ -38,6 +38,38 @@ const MenteeProfile = () => {
   const onCancel = () => {
     navigate(-1);
   };
+  const categoryArr = [
+    {
+      id: 1,
+      interest: "가치관",
+      count: 0,
+    },
+    {
+      id: 2,
+      interest: "재테크",
+      count: 0,
+    },
+    {
+      id: 3,
+      interest: "사랑",
+      count: 0,
+    },
+    {
+      id: 4,
+      interest: "생활지식",
+      count: 0,
+    },
+    {
+      id: 5,
+      interest: "인간관계",
+      count: 0,
+    },
+    {
+      id: 6,
+      interest: "진로",
+      count: 0,
+    },
+  ];
 
   return (
     <>
@@ -62,8 +94,9 @@ const MenteeProfile = () => {
             <Title>멘티의 멘토링 내역</Title>
             <History>
               <Column>
-                {Info.mentoringRecord?.slice(0, 3)?.map((record, index) => (
-                  <Record key={index}>
+                {/* {Info.mentoringRecord?.slice(0, 3)?.map((record, index) => ( */}
+                {categoryArr.slice.map((record) => (
+                  <Record key={record.id}>
                     <Interest>{record.interest}</Interest>
                     <Count>
                       {record.count}
@@ -73,8 +106,9 @@ const MenteeProfile = () => {
                 ))}
               </Column>
               <Column>
-                {Info.mentoringRecord?.slice(3, 6)?.map((record, index) => (
-                  <Record key={index}>
+                {/* {Info.mentoringRecord?.slice(3, 6)?.map((record, index) => ( */}
+                {categoryArr.slice(3, 6).map((record) => (
+                  <Record key={record.id}>
                     <Interest>{record.interest}</Interest>
                     <Count>
                       {record.count}

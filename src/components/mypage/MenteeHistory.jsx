@@ -17,6 +17,33 @@ const MenteeHistory = ({ Info }) => {
     mentoring.interests.some((interest) => interest.name === selectedCategory)
   );
 
+  const categoryArr = [
+    {
+      id: 1,
+      interest: "가치관",
+    },
+    {
+      id: 2,
+      interest: "재테크",
+    },
+    {
+      id: 3,
+      interest: "사랑",
+    },
+    {
+      id: 4,
+      interest: "생활지식",
+    },
+    {
+      id: 5,
+      interest: "인간관계",
+    },
+    {
+      id: 6,
+      interest: "진로",
+    },
+  ];
+
   return (
     <>
       <TitleBox>
@@ -43,9 +70,9 @@ const MenteeHistory = ({ Info }) => {
               ))}
             </CateLeft>
             <CateRight>
-              {Info.mentoringRecord?.slice(3)?.map((cat, idx) => (
+              {categoryArr.slice(3).map((cat) => (
                 <CategoryBox
-                  key={idx}
+                  key={cat.id}
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>

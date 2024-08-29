@@ -21,26 +21,32 @@ const MenteeHistory = ({ Info }) => {
     {
       id: 1,
       interest: "가치관",
+      count: 0,
     },
     {
       id: 2,
       interest: "재테크",
+      count: 0,
     },
     {
       id: 3,
       interest: "사랑",
+      count: 0,
     },
     {
       id: 4,
       interest: "생활지식",
+      count: 0,
     },
     {
       id: 5,
       interest: "인간관계",
+      count: 0,
     },
     {
       id: 6,
       interest: "진로",
+      count: 0,
     },
   ];
 
@@ -56,34 +62,32 @@ const MenteeHistory = ({ Info }) => {
         <Wrapper>
           <Whole>
             <CateLeft>
+              {/* {Info.mentoringRecord?.slice(0, 3)?.map((cat, idx) => ( */}
               {categoryArr.slice(0, 3).map((cat) => (
                 <CategoryBox
                   key={cat.id}
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>
-                  {Info.mentoringRecord?.slice(0, 3)?.map((cat, idx) => (
-                    <CategoryCount key={idx}>
-                      {cat.count ?? 0}
-                      <span>회</span>
-                    </CategoryCount>
-                  ))}
+                  <CategoryCount>
+                    {cat.count}
+                    <span>회</span>
+                  </CategoryCount>
                 </CategoryBox>
               ))}
             </CateLeft>
             <CateRight>
+              {/* {Info.mentoringRecord?.slice(3)?.map((cat, idx) => ( */}
               {categoryArr.slice(3).map((cat) => (
                 <CategoryBox
                   key={cat.id}
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>
-                  {Info.mentoringRecord?.slice(3)?.map((cat, idx) => (
-                    <CategoryCount key={idx}>
-                      {cat.count ?? 0}
-                      <span>회</span>
-                    </CategoryCount>
-                  ))}
+                  <CategoryCount>
+                    {cat.count}
+                    <span>회</span>
+                  </CategoryCount>
                 </CategoryBox>
               ))}
             </CateRight>

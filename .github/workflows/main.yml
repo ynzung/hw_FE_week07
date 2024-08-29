@@ -24,11 +24,12 @@ jobs:
         run: npm install # npm install을 실행할 경로로 설정
 
       - name: Build # React Build
-        run: npm run build # npm run build를 실행할 경로로 설정
+        run: npm run build # npm run build를 실행할 경로로 설정 
+        env:
+          CI: "" 
 
       - name: Deploy # S3에 배포하기
         env:
-          CI: "" 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |

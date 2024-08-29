@@ -56,9 +56,9 @@ const MenteeHistory = ({ Info }) => {
         <Wrapper>
           <Whole>
             <CateLeft>
-              {Info.mentoringRecord?.slice(0, 3)?.map((cat, idx) => (
+              {categoryArr.slice(0, 3).map((cat) => (
                 <CategoryBox
-                  key={idx}
+                  key={cat.id}
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>

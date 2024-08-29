@@ -7,7 +7,7 @@ const Server_IP = process.env.REACT_APP_Server_IP;
 const Column = ({ $categoryColor, $categoryBg, Info }) => {
   const navigate = useNavigate();
   const username = localStorage.getItem("name");
-  const hasScrap = Info?.length !== 0;
+  const hasScrap = Info && Info.length !== 0;
 
   return (
     <>

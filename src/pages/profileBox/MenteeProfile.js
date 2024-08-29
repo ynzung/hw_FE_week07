@@ -95,7 +95,7 @@ const MenteeProfile = () => {
             <History>
               <Column>
                 {/* {Info.mentoringRecord?.slice(0, 3)?.map((record, index) => ( */}
-                {categoryArr.slice.map((record) => (
+                {categoryArr.slice(0, 3).map((record) => (
                   <Record key={record.id}>
                     <Interest>{record.interest}</Interest>
                     <Count>

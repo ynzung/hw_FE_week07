@@ -64,7 +64,7 @@ const MenteeHistory = ({ Info }) => {
                   <Category>{cat.interest}</Category>
                   {Info.mentoringRecord?.slice(0, 3)?.map((cat, idx) => (
                     <CategoryCount key={idx}>
-                      {cat.count}
+                      {cat.count ?? 0}
                       <span>회</span>
                     </CategoryCount>
                   ))}
@@ -80,7 +80,7 @@ const MenteeHistory = ({ Info }) => {
                   <Category>{cat.interest}</Category>
                   {Info.mentoringRecord?.slice(3)?.map((cat, idx) => (
                     <CategoryCount key={idx}>
-                      {cat.count}
+                      {cat.count ?? 0}
                       <span>회</span>
                     </CategoryCount>
                   ))}

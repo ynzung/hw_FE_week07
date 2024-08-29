@@ -62,10 +62,12 @@ const MenteeHistory = ({ Info }) => {
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>
-                  <CategoryCount>
-                    {cat.count}
-                    <span>회</span>
-                  </CategoryCount>
+                  {Info.mentoringRecord?.slice(0, 3)?.map((cat, idx) => (
+                    <CategoryCount key={idx}>
+                      {cat.count}
+                      <span>회</span>
+                    </CategoryCount>
+                  ))}
                 </CategoryBox>
               ))}
             </CateLeft>
@@ -76,10 +78,12 @@ const MenteeHistory = ({ Info }) => {
                   onClick={() => handleCategoryClick(cat.interest)}
                 >
                   <Category>{cat.interest}</Category>
-                  <CategoryCount>
-                    {cat.count}
-                    <span>회</span>
-                  </CategoryCount>
+                  {Info.mentoringRecord?.slice(3)?.map((cat, idx) => (
+                    <CategoryCount key={idx}>
+                      {cat.count}
+                      <span>회</span>
+                    </CategoryCount>
+                  ))}
                 </CategoryBox>
               ))}
             </CateRight>

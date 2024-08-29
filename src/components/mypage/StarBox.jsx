@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const StarBox = ({ rating }) => {
+  const ratingScore = rating ?? 0;
   const starsArr = ["first", "second", "third", "fourth", "last"];
   const [ratesResArr, setRatesResArr] = useState([0, 0, 0, 0, 0]);
 
@@ -20,8 +21,8 @@ const StarBox = ({ rating }) => {
   };
 
   useEffect(() => {
-    setRatesResArr(calcStarRates(rating));
-  }, [rating]);
+    setRatesResArr(calcStarRates(ratingScore));
+  }, [ratingScore]);
 
   return (
     <RatingBox>
@@ -39,9 +40,6 @@ const StarBox = ({ rating }) => {
                 viewBox="0 0 28 29"
                 fill="none"
               >
-                {/* <clipPath id={`${item}StarClip`}>
-                  <rect width={`${ratesResArr[idx]}`} height="29" />
-                </clipPath> */}
                 <defs>
                   {isPartialStar && (
                     <linearGradient
@@ -74,7 +72,7 @@ const StarBox = ({ rating }) => {
         })}
       </StarRateWrap>
       <Rating>
-        {rating}
+        {ratingScore}
         <span>/100</span>
       </Rating>
     </RatingBox>
